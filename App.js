@@ -31,6 +31,7 @@ export default function App() {
         component={CourseListScreen} 
         options={{
           tabBarLabel: "Home",
+          headerShown: false,
           tabBarIcon: ({ color }) => (<Ionicons name="home" size={20} color={color}/>
           ),
         }}
