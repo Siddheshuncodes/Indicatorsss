@@ -31,7 +31,7 @@ export const AboutStack = () => {
         }
       }}>
         <Stack.Screen name="HomeWithProp" component={HomeScreenProp} options={{
-          title: "Welcome Home",
+          title: "Carbon Footprint",
           
 
         }}/>

@@ -47,10 +47,10 @@ export default function App() {
         }}
         />
 
-        <Tab.Screen name="About Stack" component={AboutStack} 
+        <Tab.Screen name="Footprint" component={AboutStack} 
           options={{
             headerShown: false, // Uncomment to see the change. This will hide the header of the stack navigator. 
-            tabBarIcon: ({ color }) => (<Ionicons name="information-circle" size={20} color={color}></Ionicons>)
+            tabBarIcon: ({ color }) => (<Ionicons name="car" size={20} color={color}></Ionicons>)
           }}
         />
 
