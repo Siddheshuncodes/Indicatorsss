@@ -1,24 +1,29 @@
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import React from 'react';
 
-const BookmarkScreen = () => {
+const BookmarkScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>My Bookmarks</Text>
       
       <View style={styles.blocksContainer}>
+
         <TouchableOpacity style={[styles.block, styles.block1, styles.largeBlock]}>
-          <Text style={styles.blockText}>Bookmark 1</Text>
+          <Text style={styles.blockText} onPress={() => navigation.navigate("Bookmark1")}>Bookmark 1</Text>
         </TouchableOpacity>
+
         <TouchableOpacity style={[styles.block, styles.block2, styles.mediumBlock]}>
           <Text style={styles.blockText}>Bookmark 2</Text>
         </TouchableOpacity>
+
         <TouchableOpacity style={[styles.block, styles.block3, styles.smallBlock]}>
           <Text style={styles.blockText}>Bookmark 3</Text>
         </TouchableOpacity>
+
         <TouchableOpacity style={[styles.block, styles.block4, styles.mediumBlock]}>
           <Text style={styles.blockText}>Bookmark 4</Text>
         </TouchableOpacity>
+
       </View>
     </View>
   );
