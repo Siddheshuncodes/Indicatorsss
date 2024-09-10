@@ -1,10 +1,12 @@
 import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity, Image, ScrollView } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import React from 'react';
+import React, { useState } from 'react';
 
 const CourseListScreen = () => {
+  const [activeRoute, setActiveRoute] = useState(null);
+
   const handleRoutePress = (route) => {
-    // Handle route press action
+    setActiveRoute(route); // Set the active route
     console.log(`Pressed ${route}`);
   };
 
@@ -50,7 +52,10 @@ const CourseListScreen = () => {
         <View style={styles.routesContainer}>
           <Text style={styles.sectionTitle}>Recent Routes</Text>
 
-          <TouchableOpacity style={styles.routeBox} onPress={() => handleRoutePress('Route 1')}>
+          <TouchableOpacity 
+            style={[styles.routeBox, activeRoute === 'Route 1' && styles.activeRoute]} 
+            onPress={() => handleRoutePress('Route 1')}
+          >
             <Ionicons name="location-outline" size={24} color="black" />
             <View style={styles.routeTextContainer}>
               <Text style={styles.routeTitle}>Route 1</Text>
@@ -58,7 +63,10 @@ const CourseListScreen = () => {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.routeBox} onPress={() => handleRoutePress('Route 2')}>
+          <TouchableOpacity 
+            style={[styles.routeBox, activeRoute === 'Route 2' && styles.activeRoute]} 
+            onPress={() => handleRoutePress('Route 2')}
+          >
             <Ionicons name="location-outline" size={24} color="black" />
             <View style={styles.routeTextContainer}>
               <Text style={styles.routeTitle}>Route 2</Text>
@@ -66,7 +74,10 @@ const CourseListScreen = () => {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.routeBox} onPress={() => handleRoutePress('Route 3')}>
+          <TouchableOpacity 
+            style={[styles.routeBox, activeRoute === 'Route 3' && styles.activeRoute]} 
+            onPress={() => handleRoutePress('Route 3')}
+          >
             <Ionicons name="location-outline" size={24} color="black" />
             <View style={styles.routeTextContainer}>
               <Text style={styles.routeTitle}>Route 3</Text>
@@ -193,6 +204,9 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 4,
     elevation: 2,
+  },
+  activeRoute: {
+    backgroundColor: '#E0F7FA', // Light blue color
   },
   routeTextContainer: {
     marginLeft: 10,
