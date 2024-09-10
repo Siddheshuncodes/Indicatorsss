@@ -11,7 +11,7 @@ const CourseListScreen = () => {
         <Ionicons name="home" size={42} color="black" />
         <View style={styles.textContainer}>
           <Text style={styles.title}>Home </Text>
-          <Text style={styles.address}>Sneha Nagar, Mhasrul, Nashik</Text>
+          <Text style={styles.address}>  Sneha Nagar, Mhasrul, Nashik</Text>
         </View>
       </View>
 
