@@ -38,11 +38,11 @@ export default function App() {
         />
 
         <Tab.Screen 
-        name="Settings" 
+        name="Bookmarks" 
         component={SettingsScreen} 
         options={{
-          tabBarLabel: "Settings",
-          tabBarIcon: ({ color }) => (<Ionicons name="cog" size={20} color={color}/>
+          tabBarLabel: "Bookmarks",
+          tabBarIcon: ({ color }) => (<Ionicons name="bookmark" size={20} color={color}/>
           ),
         }}
         />
