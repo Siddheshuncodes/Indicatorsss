@@ -9,7 +9,7 @@ const BookmarkScreen = ({navigation}) => {
       <View style={styles.blocksContainer}>
 
         <TouchableOpacity style={[styles.block, styles.block1, styles.largeBlock]}>
-          <Text style={styles.blockText} onPress={() => navigation.navigate("Bookmark1")}>Bookmark 1</Text>
+          <Text style={styles.blockText} onPress={() => navigation.navigate("Bookmark1y")}>Bookmark 1</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={[styles.block, styles.block2, styles.mediumBlock]}>
