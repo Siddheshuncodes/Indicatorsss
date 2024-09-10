@@ -4,6 +4,11 @@ import React, { useState } from 'react';
 
 const CourseListScreen = () => {
   const [activeRoute, setActiveRoute] = useState(null);
+  const [connectedVehicle, setConnectedVehicle] = useState({
+    name: 'Honda Activa',
+    status: 'Connected',
+    image: 'https://example.com/vehicle-image.jpg', // Replace with actual vehicle image URL
+  });
 
   const handleRoutePress = (route) => {
     setActiveRoute(route); // Set the active route
@@ -91,7 +96,22 @@ const CourseListScreen = () => {
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Connect to Maps</Text>
         </TouchableOpacity>
-        
+
+        {/* Connected Vehicle Section */}
+        <View style={styles.vehicleContainer}>
+          <Text style={styles.vehicleTitle}>Connected Vehicle</Text>
+          <View style={styles.vehicleDetails}>
+          <Image 
+              source={{uri: 'https://imgs.search.brave.com/Cj9XtTVGdIO7LoNvdBnIZ9Zw0MNebqChqrTn6igaeiw/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy8x/LzE3L05ld19Ib25k/YV9BY3RpdmFfU2Nv/b3Rlcl9hdF9Lb21t/YWRpLkpQRw'}} // Placeholder vehicle image
+              style={styles.vehicleImage}
+            />
+            <View style={styles.vehicleTextContainer}>
+              <Text style={styles.vehicleName}>{connectedVehicle.name}</Text>
+              <Text style={styles.vehicleStatus}>{connectedVehicle.status}</Text>
+            </View>
+          </View>
+        </View>
+
       </ScrollView>
     </SafeAreaView>
   );
@@ -230,6 +250,44 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
     fontSize: 16,
+  },
+  vehicleContainer: {
+    backgroundColor: '#fff',
+    padding: 15,
+    borderRadius: 10,
+    marginBottom: 20,
+    shadowColor: '#000',
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 2,
+  },
+  vehicleTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#333',
+    marginBottom: 10,
+  },
+  vehicleDetails: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  vehicleImage: {
+    width: 80,
+    height: 80,
+    borderRadius: 10,
+    marginRight: 10,
+  },
+  vehicleTextContainer: {
+    flex: 1,
+  },
+  vehicleName: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#333',
+  },
+  vehicleStatus: {
+    fontSize: 14,
+    color: 'green',
   },
 });
 
